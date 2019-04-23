@@ -1,0 +1,569 @@
+@import "typography"
+@import "media"
+
+$cursor: url("/img/cursor.png"), pointer
+
+html
+  min-width: 320px
+  margin: 0
+  padding: 0
+  overflow-x: hidden  
+body
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  overflow-x: hidden
+  background-color: rgb(73, 108, 235)
+  margin: 0
+
+.request-table-wrap
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  // position: relative
+  width: 100%
+  max-width: 1155px
+  padding: 83px 40px
+  background: #FFFFFF
+
+.request-table
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  width: 100%
+  // position: absolute
+  // left: 5%
+  // right: 5%
+  // top: 7.55%
+  // bottom: 7.55% 
+  padding: 40px
+  background: #FFFFFF
+  border: 1px solid rgba(17, 34, 62, 0.05)
+  box-sizing: border-box
+  border-radius: 5px
+// -------------------------------------------------Header
+.header
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  width: 100%
+  .buttons-iphone-wrapper
+    display: flex
+    flex-direction: row
+    min-width: 210px
+    height: 40px
+    margin-left: 20px
+    border: 1px solid rgba(34, 62, 105, 0.2)
+    border-radius: 5px 5px 5px 5px
+    // transform: translateX(-30px)
+    box-sizing: border-box
+  button
+    width: 50%
+    background: #FFFFFF
+    border: 1px solid rgba(34, 62, 105, 0.2)
+    box-sizing: border-box
+    cursor: $cursor
+  .disabled
+    color: #11223E80    
+  .iphone-button
+    border-right: 1px solid rgba(34, 62, 105, 0.2)
+  .ipad-button
+    border-left: 1px solid rgba(34, 62, 105, 0.2)
+  .buttons-request-wrapper
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    align-items: center
+    width: 100%
+    
+  .download-csv-button
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 142px
+    height: 40px
+    margin-right: 20px
+    border: 1px solid #223E69
+    box-sizing: border-box
+    border-radius: 5px
+    &:hover
+      // background-color: #ffff78
+      background-image: url("/img/header/download.png")
+      background-position: center
+      background-repeat: no-repeat
+      background-size: 40px 40px
+      border: none
+      color: #fff0
+  .addRequestButton
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 169px
+    height: 40px
+    background: #FC3969
+    box-shadow: 0px 3px 7px rgba(252, 57, 105, 0.3)
+    border-radius: 5px
+    color: #FFFFFF
+
+
+.search-request
+  display: flex
+  min-width: 240px
+  height: 40px
+  padding-left: 15px
+  background: #FFFFFF
+  border: 1px solid rgba(34, 62, 105, 0.1)
+  box-sizing: border-box
+  border-radius: 5px
+
+.block-action
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 40px
+  margin-top: 30px
+  background: #F8E71C33
+  border-radius: 5px
+  font-size: 12px
+  line-height: 8px
+  color: #11223E
+  .icon-attention
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 14px
+    min-width: 14px
+    height: 14px
+    min-height: 14px
+    margin: 0 10px 0 25px
+    border-radius: 50%
+    border: 1px solid #11223E66
+    color: #11223E66
+  &__top-wrap
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    width: 81px
+    height: 18px    
+  &__45
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50%
+    height: 18px    
+    background: #F8E71C
+    border-radius: 5px 0px 0px 5px
+  &__top
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50%
+    height: 18px
+    background: white
+    border-radius: 0px 5px 5px 0px
+  p
+    color: #11223E66
+    font-size: 14px
+    line-height: 9px
+// ----------------------------------------------End Header
+
+// ----------------------------------------------Table-block
+.invisible
+  display: none!important
+.col
+  display: flex
+  flex-direction: column!important
+.table-info
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  width: 100%
+  margin-top: 30px
+  border: 1px solid rgba(34, 62, 105, 0.2)
+  .menu-top
+    height: 50px
+  .menu-header //---------------------------------menu-header
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    width: 100%
+    min-height: 50px
+    margin: 0
+    padding: 0
+    &__col-buttons //------------------------------col-buttons
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      flex-grow: 2
+      min-width: 150px
+      height: 100%
+      min-height: 50px
+      padding-left: 15px
+      border-right: 1px solid rgba(34, 62, 105, 0.2)
+      border-left: 0px
+      .checkbox-wrapper
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-right: 10px
+      .sort-checkbox
+        display: flex
+        position: relative
+        padding-left: 35px
+        margin-bottom: 12px
+        cursor: $cursor
+        font-size: 22px
+        user-select: none
+      .sort-checkbox input
+        position: absolute
+        opacity: 0
+        cursor: $cursor
+        height: 0
+        width: 0
+      .checkmark
+        position: absolute
+        top: -5px
+        left: 0
+        height: 22px
+        width: 22px
+        border-radius: 5px        
+        background-color: #eee
+      .sort-checkbox:hover input ~ .checkmark
+        background-color: #ccc
+      .sort-checkbox input:checked ~ .checkmark
+        background-color: #2196F3
+      .checkmark:after
+        content: ""
+        position: absolute
+        display: none
+      .sort-checkbox input:checked ~ .checkmark:after
+        display: block
+      .sort-checkbox .checkmark:after 
+        left: 8px
+        top: 3px
+        width: 5px
+        height: 10px
+        border: solid white
+        border-width: 0 3px 3px 0
+        -webkit-transform: rotate(45deg)
+        -ms-transform: rotate(45deg)
+        transform: rotate(45deg)
+      .col-buttons__wrapper
+        display: flex
+        flex-direction: row
+        justify-content: flex-start
+        align-items: center
+        &:hover
+          cursor: $cursor
+        .col-buttons
+          &__trash
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 18px
+            height: 18px
+            background-image: url("/img/table-info/status-buttons/trash.png")
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+          &__reload
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 18px
+            height: 18px
+            margin: 0px 15px 0px 15px
+            background-image: url("/img/table-info/status-buttons/reload.png")
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center
+          &__rocket
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 18px
+            height: 18px
+            background-image: url("/img/table-info/status-buttons/rocket.png")
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: center    
+    
+    .col-name__wrapper // -------------------------col-name__wrapper
+      display: flex
+      flex-direction: row
+      width: 100%
+      font-size: 10px
+    .col-name
+      display: flex
+      justify-content: center
+      align-items: center
+    .col-name__buttons
+      display: flex
+      flex-direction: row
+      justify-content: flex-end
+      align-items: center
+      width: 40%
+      height: 24px
+      &_star
+        display: flex
+        width: 14px
+        height: 14px
+        background-image: url("/img/table-info/star/Star@2x-empty.png")
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        &:hover
+          cursor: $cursor
+          background-image: url("/img/table-info/star/Star@2x-hover.png")
+      .checked-star
+        background-image: url("/img/table-info/star/Star@2x-selected.png")!important
+
+      &_triangle
+        display: flex
+        width: 5px
+        height: 8px
+        background-image: url("/img/table-info/status-buttons/path-right.png")
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        border: 8px solid transparent
+        &:hover
+          cursor: $cursor
+    &__col-frequency //------------------------------col-frequency
+      display: flex
+      flex-direction: row
+      justify-content: center
+      align-items: center
+      width: 90px
+      min-width: 90px
+      height: 100%
+      min-height: 50px
+      font-size: 12px
+      line-height: 15px
+      background-color: #ffff8080
+      color: #00000080
+      &_name
+        display: flex
+        width: 70%
+        text-align: center
+        cursor: $cursor
+      &_name::after
+        content: ""
+        display: flex
+        width: 6px
+        height: 3px
+        background-image: url("/img/table-info/status-buttons/triangle-dpwn.png")
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        transform: translate(5px, 16px)
+        &:hover
+          cursor: $cursor      
+    &__date-wrapper  //------------------------------menu-header__date-wrapper
+      display: flex
+      flex-direction: row
+      overflow-y: hidden
+      overflow-x: scroll
+      width: 100%
+      height: 100%  
+    &__date
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-grow: 2
+      height: 100%
+      border: 1px solid rgba(34, 62, 105, 0.2)
+      font-size: 12px
+      line-height: 8px
+      color: #08080880
+    &__value-wrapper
+      display: flex
+      flex-direction: row
+      width: 100%
+      height: 100%
+      overflow-y: hidden
+      overflow-x: hidden
+      border: 1px solid rgba(34, 62, 105, 0.2)
+      border-left: 0px
+      &:hover
+        overflow-x: auto
+    &__value
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      min-width: 50px
+      height: 100%
+      min-height: 50px
+      border: 1px solid rgba(34, 62, 105, 0.2)
+      font-size: 14px
+      line-height: 8px
+      background: #ffffff
+      color: #08080880
+      .top-index
+        display: flex
+        justify-content: flex-end
+        width: 100%
+        height: 30%
+        div
+          display: flex
+          align-items: center
+          width: 35%
+          margin: 0          
+        .red-index
+          color: #D0021B
+          &::before
+            content: ""
+            display: flex
+            width: 6px
+            height: 3px
+            background-image: url("/img/table-info/status-buttons/red-trgl-down.png")
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            transform: translate(-3px, 2px)
+          &::after
+            content: "1"
+          &:hover
+            cursor: $cursor
+        .green-index
+          color: #417505
+          &::before
+            content: ""
+            display: flex
+            width: 6px
+            height: 3px
+            background-image: url("/img/table-info/status-buttons/green-trgl-up.png")
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            transform: translate(-3px, 2px)
+          &::after
+            content: "1"
+          &:hover
+            cursor: $cursor
+        .new-index
+          width: 60%
+          color: #417505
+          &:before
+            content: "new"        
+      .middle-block-value
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 40%
+      .bottom-index
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 30%
+        div
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 22px
+          height: 11px
+          border-radius: 3px
+          background: #75B926
+    &__row
+      display: flex
+      width: 100%
+      height: 100%
+      border: 1px solid rgba(34, 62, 105, 0.2)
+.toggle-top-10 //------------------------toggle-top-10__wrapper
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  width: 100%
+  margin: 0
+  padding: 0
+  &__view
+    display: flex
+    width: 100%
+    height: 255px
+    border: 1px solid transparent
+    &_button
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 174px
+      height: 32px
+      margin-top: 20px
+      margin-left: 55px
+      border-radius: 5px
+      border: 1px solid #858585
+      background: #ffffff
+      font-size: 14px
+      line-height: 10px
+      &:hover
+        cursor: $cursor
+        background: #0080ff
+        color: #ffffff 
+  &__icon-block
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 100%
+    overflow-y: hidden
+    overflow-x: auto
+    &_row
+      display: flex
+      flex-direction: row
+      width: 100%
+      height: 40px
+      .menu-header__value
+        border: 1px solid transparent
+      .icon-3
+        display: flex
+        width: 24px
+        height: 24px
+        background-image: url("/img/table-info/img-3.png")
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        &:hover
+          cursor: $cursor
+      .icon-grad
+        display: flex
+        width: 24px
+        height: 24px
+        background-image: url("/img/table-info/img-grad.png")
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        &:hover
+          cursor: $cursor
+      .icon-j
+        display: flex
+        width: 24px
+        height: 24px
+        background-image: url("/img/table-info/img-j.png")
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        &:hover
+          cursor: $cursor  
+    &_col
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 52px
+      border: 1px solid rgba(34, 62, 105, 0.2)
+.toggle-block
+  display: flex
+  width: 100%
+  height: 255px
+.menu-header__wrapper
+  display: flex
+  width: 100%
+  height: 50px
+// ----------------------------------------------End Table-block
